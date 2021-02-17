@@ -33,3 +33,4 @@ if __name__ == '__main__':
 	plt.ylabel('y')
 	plt.title('Branin optimiation')
 	plt.show()
+

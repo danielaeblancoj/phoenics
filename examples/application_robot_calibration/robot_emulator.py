@@ -4,7 +4,8 @@ import sys
 sys.path.append('./model_training')
 import numpy as np 
 
-from model import Model
+from .application_robot_calibration.model_training import model as Model
+#from model import Model
 
 #======================================================================
 
@@ -16,7 +17,7 @@ class RobotEmulator(object):
 		dataset_file    = 'model_training/data_set/experimental_data.pkl'
 		index_file      = 'model_training/data_set/cross_validation_indices.pkl'
 
-		self.robot = Model(dataset_file, index_file, model_path = './model_training/', plot = True)
+		self.robot = Model(dataset_file, index_file, model_path = './model_training/Fold_0', plot = True)
 		self.robot.initialize_models(batch_size = len(self.robot.train_features[0]))
 		self.robot.set_hyperparameters(hyperparam_dict)
 
